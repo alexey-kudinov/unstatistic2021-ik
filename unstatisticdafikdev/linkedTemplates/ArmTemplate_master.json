@@ -1,0 +1,56 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Имя фабрики данных",
+			"defaultValue": "unstatisticdafikdev"
+		},
+		"msbiazurelinkedservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Защищенная строка для \"connectionString\" из \"msbiazurelinkedservice\""
+		},
+		"unstatisticsqlsikdevlinkedservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Защищенная строка для \"connectionString\" из \"unstatisticsqlsikdevlinkedservice\""
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI для учетной записи хранения со связанными шаблонами ARM"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Маркер SAS для учетной записи хранения со связанными шаблонами ARM"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "unstatisticdafikdev_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"msbiazurelinkedservice_connectionString": {
+						"value": "[parameters('msbiazurelinkedservice_connectionString')]"
+					},
+					"unstatisticsqlsikdevlinkedservice_connectionString": {
+						"value": "[parameters('unstatisticsqlsikdevlinkedservice_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
