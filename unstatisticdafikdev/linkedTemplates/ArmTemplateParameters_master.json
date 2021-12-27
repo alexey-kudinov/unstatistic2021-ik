@@ -11,6 +11,12 @@
 		"unstatisticsqlsikdevlinkedservice_connectionString": {
 			"value": ""
 		},
+		"unstatisticstac_accountKey": {
+			"value": ""
+		},
+		"unstatisticstac_properties_typeProperties_url": {
+			"value": "https://unstatisticstacikdev.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"value": ""
 		},

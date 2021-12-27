@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Защищенная строка для \"connectionString\" из \"unstatisticsqlsikdevlinkedservice\""
 		},
+		"unstatisticstac_accountKey": {
+			"type": "secureString",
+			"metadata": "Защищенная строка для \"accountKey\" из \"unstatisticstac\""
+		},
+		"unstatisticstac_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://unstatisticstacikdev.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI для учетной записи хранения со связанными шаблонами ARM"
@@ -47,6 +55,12 @@
 					},
 					"unstatisticsqlsikdevlinkedservice_connectionString": {
 						"value": "[parameters('unstatisticsqlsikdevlinkedservice_connectionString')]"
+					},
+					"unstatisticstac_accountKey": {
+						"value": "[parameters('unstatisticstac_accountKey')]"
+					},
+					"unstatisticstac_properties_typeProperties_url": {
+						"value": "[parameters('unstatisticstac_properties_typeProperties_url')]"
 					}
 				}
 			},
