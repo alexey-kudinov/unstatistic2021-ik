@@ -1,0 +1,10 @@
+{
+	"name": "unstatistickyvtik",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://unstatistickyvtikdev.vault.azure.net/"
+		}
+	}
+}
